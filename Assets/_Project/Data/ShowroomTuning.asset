@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2d2f235b9d747c5b7c34c538618406, type: 3}
+  m_Name: ShowroomTuning
+  m_EditorClassIdentifier: 
+  inspectMin: 6
+  inspectMax: 18
+  hotspotDelay: 4
+  customiseMin: 6
+  customiseMax: 20
+  customiseChanges: 2
+  explodeMax: 15
+  explodedHold: 8
+  guideExplodeHold: 4
+  endCardHold: 10
+  hintDuration: 3
+  tableMinHeight: 0.6
+  tableMaxHeight: 1.1
+  maxTableDistance: 2
+  preferredReach: 0.45
+  edgeMargin: 0.18
+  fixedDistance: 0.6
+  waistHeightRatio: 0.58
+  pedestalMinHeight: 0.55
+  pedestalMaxHeight: 1
+  followDistance: 2
+  followDelay: 1.5
+  pointTimeout: 20
+  pointerRange: 4
+  minScale: 0.5
+  maxScale: 3
+  returnFrequency: 2.2
+  returnDamping: 0.82
+  trackingLostHold: 0.5
+  sweepDuration: 0.4
+  explodePullDistance: 0.25
+  reassemblePushDistance: 0.15
+  explodeDuration: 0.8
+  panelSideOffset: 0.34
+  panelHeight: 0.215
+  panelFollowThreshold: 0.25

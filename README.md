@@ -2,7 +2,7 @@
 
 A mixed reality product showroom for **Meta Quest 3 and 3S**. A sneaker, the fictional **AERO Pulse**, lands on your real table. You pick it up, recolour it, pull it apart to see what it is made of, and finish on a card with a call to action. The whole thing takes about a minute.
 
-![The exploded view: eight labelled parts floating above the surface, with the colour panel beside them](images/exploded.png)
+![The exploded view: eight labelled parts floating above the surface, with the colour panel beside them](Docs/Images/exploded.png)
 
 *Editor preview. On the headset you see your own room through passthrough, and the product stands on your own table.*
 
@@ -12,7 +12,7 @@ It is a portfolio piece shaped like a playable ad: your product, on your custome
 
 **[Download the APK (v0.1.0, 83 MB)](https://github.com/Alihamxamalik/XR-Product-ShowRoom/raw/main/MR-Product-Showroom-v0.1.0.apk)**
 
-This repository holds the app and its description. The source code is not published.
+This repository holds the ready-to-install app and the full Unity project it is built from. To try it you only need the APK; the [developer sections](#for-developers) further down are for building it yourself.
 
 ## What you do in it
 
@@ -42,14 +42,14 @@ Each phase switches one more thing on and shows one short hint, with a transluce
 
 | | |
 |---|---|
-| ![The sneaker rising out of its box](images/hook.png) | ![The sneaker with its hotspot dots, one of them open](images/inspect.png) |
+| ![The sneaker rising out of its box](Docs/Images/hook.png) | ![The sneaker with its hotspot dots, one of them open](Docs/Images/inspect.png) |
 
 - One hand picks the sneaker up, moves it and turns it. Two hands resize it, from half to three times its real size.
 - Five glowing dots mark its features: cushioned sole, breathable mesh, carbon plate, reflective heel and grip outsole. Poking one opens a short card.
 
 ### Make it yours
 
-![A new colour sweeping across the sneaker, with the colour panel beside it](images/customise.png)
+![A new colour sweeping across the sneaker, with the colour panel beside it](Docs/Images/customise.png)
 
 - Three regions (upper, sole and laces) with five colours each.
 - Two finishes for the upper: matte and metallic.
@@ -64,7 +64,7 @@ Pull the sneaker apart with two hands and it separates into eight labelled parts
 
 | | |
 |---|---|
-| ![The sneaker walking on its own, leaving footprints](images/reveal.png) | ![The end card on one side of the sneaker and the colour panel on the other](images/end-card.png) |
+| ![The sneaker walking on its own, leaving footprints](Docs/Images/reveal.png) | ![The end card on one side of the sneaker and the colour panel on the other](Docs/Images/end-card.png) |
 
 The sneaker walks a loop on your table, then an end card shows the product's name, the colourway you built and the price, with **Buy now**, **Share** and **Play again**. In this build **Buy now** and **Share** are mock-ups: they show a confirmation and do nothing else.
 
@@ -115,6 +115,88 @@ Each run writes one small file on the headset with how long each phase lasted, w
 
 SHA-256 of the APK: `dd30a750b65cb8afcd520cfb13b434c7fb97f60e5ac09e668e8dddaa13960e39`
 
+## For developers
+
+The rest of this page is about the Unity project. [How it plays](Docs/Experience.md) describes each phase in full, with the timings and every fallback.
+
+### Requirements
+
+- Unity **6000.0.81f1** with Android Build Support (SDK, NDK and OpenJDK).
+- A Meta Quest 3 or 3S in developer mode, for device builds.
+- Nothing else to install. The packages come in through `Packages/manifest.json`: Meta XR Core SDK, Interaction SDK and MR Utility Kit 207, OpenXR 1.16.1 with Unity's Meta OpenXR package 2.5.1, and URP 17.
+
+### Getting started
+
+1. Open the project in Unity 6000.0.81f1. The first import downloads the Meta packages and takes a few minutes.
+2. A dialog says that setup hasn't been completed on this machine. Choose **Run setup**. It switches to Android, applies the project settings, runs Meta's Project Setup Tool and opens the Showroom scene, and ends with a "Setup finished" dialog. It takes a few minutes, and Unity reimports and recompiles along the way. The same thing is at **MR Showroom > Setup > Run Full Setup**, and it is safe to run again. If Unity quits part-way through, use the command line instead, as described under the known issue in [Setup and build](Docs/Setup-and-Build.md#known-issue-the-editor-crashes-during-the-meta-step).
+3. Press **Play**. Whichever project scene is open, Play starts from the Bootstrap scene, the way a launch on the headset does.
+
+[Setup and build](Docs/Setup-and-Build.md) lists what setup changes and what to do when a step goes wrong.
+
+### Trying it without a headset
+
+With no headset connected, the editor gives you a head at eye height and these controls:
+
+| Input | Action |
+|---|---|
+| Left mouse | Grab the product or a part; click buttons and hotspots |
+| Mouse wheel | Move what you are holding nearer or further |
+| Q / E, R / F | Turn and tip what you are holding |
+| T / G, while holding | A second hand moving apart (T) or together (G): resize, pull apart, push back together |
+| Right mouse | Look around |
+| W A S D | Walk |
+| Space | Skip to the next phase |
+| X | Open or close the exploded view |
+| C | Random colours |
+| P | Play again |
+| M | Move the product: point, then click |
+| H | Swap the colour panel to the other side |
+
+A sample room from Meta's MR Utility Kit stands in for a scanned room, so the product lands on that room's desk.
+
+### Building for the headset
+
+**MR Showroom > Build > Development APK** writes `Builds/MRShowroom-dev.apk`; **Release APK** writes `Builds/MRShowroom.apk`. Install either with:
+
+```sh
+adb install -r Builds/MRShowroom-dev.apk
+```
+
+File > Build And Run works too. The package id is `com.alihamza.mrshowroom`.
+
+### Project layout
+
+```
+Assets/_Project/
+  Art/          brand kit, packaging, product meshes and materials, shaders, effect textures
+  Audio/        sound effects and the music bed
+  Data/         ShowroomTuning, Products/AeroPulse, Themes/Aero
+  Prefabs/      the sneaker and its box, the hotspot and part label, the ghost hands
+  Scenes/       Bootstrap, Showroom
+  Scripts/
+    Core/       events, phases, placement geometry, pause, settings
+    Data/       ProductDefinition, BrandTheme, ShowroomTuning
+    Flow/       the guided journey, the hook, the reveal walk
+    Product/    the product, grabbing, colours, the exploded view, hotspots
+    UI/         panels and hints
+    Audio/  Analytics/  Debug/
+    MR/         everything that touches the Meta SDK (its own assembly)
+    Editor/     the setup pipeline and the builders that generate scenes, prefabs and art
+  Tests/PlayMode/
+Docs/           this documentation
+Builds/         APKs you build yourself (ignored by git)
+```
+
+The scenes and prefabs are generated by the scripts in `Scripts/Editor`. Edit the builders, not the generated files: a rebuild replaces them.
+
+### Documentation
+
+- [How it plays](Docs/Experience.md): every phase, the gestures, the panels and the placement fallbacks.
+- [Architecture](Docs/Architecture.md): how the code is organised and why.
+- [Products](Docs/Products.md): adding a product, and replacing the stand-in art and audio.
+- [Setup and build](Docs/Setup-and-Build.md): the setup pipeline, project settings, builds, the command line and troubleshooting.
+- [Testing](Docs/Testing.md): the automated tests, screenshots of each phase, and the checklist for the headset.
+
 ## Licence
 
-Copyright © 2026 Ali Hamza. All rights reserved. You may download and run the app for evaluation. The source code is not available.
+Copyright © 2026 Ali Hamza. All rights reserved. The app may be downloaded and run for evaluation, and the source code is published for reference.

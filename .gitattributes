@@ -1,0 +1,40 @@
+# Source and Unity's text-serialized assets
+*.cs        text diff=csharp
+*.shader    text
+*.hlsl      text
+*.asmdef    text
+*.json      text
+*.unity     text
+*.prefab    text
+*.mat       text
+*.meta      text
+
+# Models, textures, audio and fonts. They are small enough to live in git itself,
+# so the repository works without Git LFS and as a GitHub zip download.
+*.fbx   binary
+*.obj   binary
+*.blend binary
+*.glb   binary
+*.gltf  binary
+
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.psd   binary
+*.tga   binary
+*.tif   binary
+*.tiff  binary
+*.exr   binary
+*.hdr   binary
+
+*.wav   binary
+*.mp3   binary
+*.ogg   binary
+*.aif   binary
+*.aiff  binary
+
+*.mp4   binary
+*.mov   binary
+
+*.ttf   binary
+*.otf   binary

@@ -1,0 +1,26 @@
+{
+    "name": "MRShowroom.Tests.PlayMode",
+    "rootNamespace": "MRShowroom.Tests",
+    "references": [
+        "MRShowroom",
+        "MRShowroom.MR",
+        "meta.xr.mrutilitykit",
+        "Unity.TextMeshPro",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AeroPulse_Fabric
+  m_Shader: {fileID: 4800000, guid: 018d5a0a9bcd346dcb1f3d33ec52050c, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TintMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _DetailScale: 520
+    - _DetailStrength: 0.45
+    - _Metallic: 0
+    - _OcclusionBias: 0.03
+    - _Rim: 0
+    - _RimPower: 2.4
+    - _SheenPosition: -1
+    - _SheenWidth: 0.14
+    - _Smoothness: 0.25
+    - _SweepNoise: 0.07
+    - _SweepSoftness: 0.05
+    - _TintBSweep: 1
+    - _TintGSweep: 1
+    - _TintRSweep: 1
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0.74, g: 0.92, b: 0.36, a: 1}
+    - _SheenColor: {r: 0.9, g: 0.95, b: 1, a: 1}
+    - _SweepAxis: {r: 1, g: 0, b: 0, a: 0}
+    - _SweepGlow: {r: 1, g: 1, b: 1, a: 1}
+    - _SweepRange: {r: 0, g: 1, b: 0, a: 0}
+    - _TintBFrom: {r: 1, g: 1, b: 1, a: 1}
+    - _TintBSurfaceFrom: {r: 0, g: 0.35, b: 0, a: 0}
+    - _TintBSurfaceTo: {r: 0, g: 0.35, b: 0, a: 0}
+    - _TintBTo: {r: 1, g: 1, b: 1, a: 1}
+    - _TintGFrom: {r: 1, g: 1, b: 1, a: 1}
+    - _TintGSurfaceFrom: {r: 0, g: 0.35, b: 0, a: 0}
+    - _TintGSurfaceTo: {r: 0, g: 0.35, b: 0, a: 0}
+    - _TintGTo: {r: 1, g: 1, b: 1, a: 1}
+    - _TintRFrom: {r: 1, g: 1, b: 1, a: 1}
+    - _TintRSurfaceFrom: {r: 0, g: 0.35, b: 0, a: 0}
+    - _TintRSurfaceTo: {r: 0, g: 0.35, b: 0, a: 0}
+    - _TintRTo: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

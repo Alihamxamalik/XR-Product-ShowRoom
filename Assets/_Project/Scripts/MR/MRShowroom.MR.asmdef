@@ -1,0 +1,22 @@
+{
+    "name": "MRShowroom.MR",
+    "rootNamespace": "MRShowroom.MR",
+    "references": [
+        "MRShowroom",
+        "Oculus.VR",
+        "Oculus.Interaction",
+        "Oculus.Interaction.OVR",
+        "meta.xr.mrutilitykit",
+        "Meta.XR.EnvironmentDepth",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6d489a552724477b0bace0d433200d, type: 3}
+  m_Name: AeroPulse
+  m_EditorClassIdentifier: 
+  id: aero-pulse
+  displayName: AERO Pulse
+  tagline: Run on air.
+  price: $160
+  ctaUrl: 
+  prefab: {fileID: 2099191467392838749, guid: ab89bbd3bb2ec43118eba90b2ca935b6, type: 3}
+  packaging: {fileID: 237455319281198996, guid: f3d9b9b3463524566b0caef4fc8899f0, type: 3}
+  sweepAxis: {x: -1, y: 0, z: 0}
+  footprint: {fileID: 21300000, guid: c6a5aadd629cd438ea02cd024b555bbd, type: 3}
+  footprintSize: {x: 0.3306, y: 0.1653}
+  colorSlots:
+  - name: Upper
+    shaderProperty: _TintR
+    colors:
+    - name: Cloud
+      color: {r: 0.93, g: 0.93, b: 0.91, a: 1}
+    - name: Volt
+      color: {r: 0.76, g: 0.88, b: 0.38, a: 1}
+    - name: Coral
+      color: {r: 0.93, g: 0.49, b: 0.42, a: 1}
+    - name: Sky
+      color: {r: 0.46, g: 0.66, b: 0.89, a: 1}
+    - name: Graphite
+      color: {r: 0.21, g: 0.22, b: 0.245, a: 1}
+    metallic: 0
+    smoothness: 0.25
+  - name: Sole
+    shaderProperty: _TintG
+    colors:
+    - name: Cloud
+      color: {r: 0.93, g: 0.93, b: 0.91, a: 1}
+    - name: Gum
+      color: {r: 0.74, g: 0.57, b: 0.38, a: 1}
+    - name: Volt
+      color: {r: 0.76, g: 0.88, b: 0.38, a: 1}
+    - name: Coral
+      color: {r: 0.93, g: 0.49, b: 0.42, a: 1}
+    - name: Graphite
+      color: {r: 0.21, g: 0.22, b: 0.245, a: 1}
+    metallic: 0
+    smoothness: 0.42
+  - name: Laces
+    shaderProperty: _TintB
+    colors:
+    - name: Cloud
+      color: {r: 0.93, g: 0.93, b: 0.91, a: 1}
+    - name: Graphite
+      color: {r: 0.21, g: 0.22, b: 0.245, a: 1}
+    - name: Volt
+      color: {r: 0.76, g: 0.88, b: 0.38, a: 1}
+    - name: Coral
+      color: {r: 0.93, g: 0.49, b: 0.42, a: 1}
+    - name: Sky
+      color: {r: 0.46, g: 0.66, b: 0.89, a: 1}
+    metallic: 0
+    smoothness: 0.2
+  finishSlot: 0
+  finishes:
+  - name: Matte
+    metallic: 0
+    smoothness: 0.25
+  - name: Metallic
+    metallic: 0.85
+    smoothness: 0.7
+  presets:
+  - name: Launch
+    colorIndices: 000000000200000001000000
+    finishIndex: 0
+  - name: Night Run
+    colorIndices: 040000000200000002000000
+    finishIndex: 1
+  - name: Sunset
+    colorIndices: 020000000100000000000000
+    finishIndex: 0
+  hotspots:
+  - title: Cushioned sole
+    text: Responsive foam returns energy with every step.
+    partName: Midsole
+    localPosition: {x: -0.057999995, y: 0.024, z: -0.0376459}
+    icon: {fileID: 0}
+  - title: Breathable mesh
+    text: Engineered knit keeps air moving.
+    partName: Upper
+    localPosition: {x: 0.0696, y: 0.08434082, z: 0.0043738117}
+    icon: {fileID: 0}
+  - title: Carbon plate
+    text: A full-length plate for snap at toe-off.
+    partName: Midsole
+    localPosition: {x: 0.0348, y: 0.02, z: -0.044487312}
+    icon: {fileID: 0}
+  - title: Reflective heel
+    text: Seen from 150 m at night.
+    partName: HeelCounter
+    localPosition: {x: -0.153, y: 0.062, z: 0}
+    icon: {fileID: 0}
+  - title: Grip outsole
+    text: Rubber lugs that hold on wet roads.
+    partName: Outsole
+    localPosition: {x: 0.029000007, y: -0.006, z: 0.005706339}
+    icon: {fileID: 0}
+  parts:
+  - partName: Outsole
+    label: Rubber outsole
+    direction: {x: 0, y: 1, z: 0}
+    distance: 0
+    labelHeight: 0.006
+    grabbable: 1
+  - partName: Midsole
+    label: Foam midsole
+    direction: {x: 0, y: 1, z: 0}
+    distance: 0.055
+    labelHeight: 0.024
+    grabbable: 1
+  - partName: Plate
+    label: Carbon plate
+    direction: {x: 0, y: 1, z: 0}
+    distance: 0.115
+    labelHeight: 0.022
+    grabbable: 1
+  - partName: Insole
+    label: Cushioned insole
+    direction: {x: 0, y: 1, z: 0}
+    distance: 0.16
+    labelHeight: 0.036
+    grabbable: 1
+  - partName: Upper
+    label: Knit upper
+    direction: {x: 0, y: 1, z: 0}
+    distance: 0.215
+    labelHeight: 0.095
+    grabbable: 1
+  - partName: HeelCounter
+    label: Heel counter
+    direction: {x: -0.09, y: 0.215, z: 0}
+    distance: 0.233
+    labelHeight: 0.045
+    grabbable: 1
+  - partName: Tongue
+    label: Padded tongue
+    direction: {x: 0.02, y: 0.31, z: 0}
+    distance: 0.311
+    labelHeight: 0.1
+    grabbable: 1
+  - partName: Laces
+    label: Flat laces
+    direction: {x: 0, y: 1, z: 0}
+    distance: 0.375
+    labelHeight: 0.1
+    grabbable: 1
